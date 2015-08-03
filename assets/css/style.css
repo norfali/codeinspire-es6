@@ -1,0 +1,252 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/*
+	Create breakpoint mixin
+
+	---
+	Example usage
+
+	@include add-breakpoint($name, $lower $upper);
+	---
+
+	@param $name:   The name of the breakpoint, eg. phone
+	@param $lower:  The minimum value of the breakpoint
+	@param $upper:  The maximum value of the breakpoint
+*/
+/*
+	Return a given breakpoint
+
+	---
+	Example usage
+
+	$breakpoint: get-breakpoint($name);
+	---
+
+	@param $name:   The name of the breakpoint, eg. phone
+*/
+/*
+	Use breakpoint
+
+	---
+	Example usage
+
+	body {
+		@include breakpoint($name, $direction) {
+			background: red;
+		}
+	}
+	---
+
+	@param $name:                  The name of the breakpoint, eg. phone. Must match existing breakpoint created using add-breakpoint()
+	@optional-param $direction:    The direction of the breakpoint, eg. phone and up. False if not passed
+	
+	@options $direction:  no argument: create media-query between given breakpoints dimensions
+												up: create media-query from given breakpoint minimum and up
+												down: create media-query from given breakpoint maximum and down
+												$breakpoint: create media query between the two given breakpoints  
+*/
+/*
+	Applies spacing (padding or margin)
+
+	@param $spacing-type: The type of spacing - can either be padding or margin.
+	@param $directions:  The directions in which to apply the spacing.
+	@param $breakpoint: The breakpoint at which to apply this modifier.
+	@param $application: The application of the modifier to the breakpoints. (set, all, up, down)
+	@param $value:  The value of the modifier itself to apply.
+	@param $absolute: Indicates whether to use ratios when applying the modifier to other breakpoints.
+*/
+/*  --------------------------------------------------- 
+    Breakpoints
+------------------------------------------------------- */
+.header__inner, .main-content, .footer__inner {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.header__inner::after, .main-content::after, .footer__inner::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.snippets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.snippets__creatorlink, .snippets__codelink {
+  text-decoration: none;
+  color: #00aeef;
+  font-family: Georgia,"Times New Roman",Times,sans-serif;
+  font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
+
+@media screen and (min-width: 0px) and (max-width: 420px) {
+  .snippets:first-child {
+    padding-right: 0.33rem;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 720px) {
+  .snippets:first-child {
+    padding-right: 0.5rem;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  .snippets:first-child {
+    padding-right: 0.665rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .snippets:first-child {
+    padding-right: 1rem;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 9999px) {
+  .snippets:first-child {
+    padding-right: 1.25rem;
+  }
+}
+.snippets__item {
+  display: block;
+  vertical-align: middle;
+  border-top: 1px solid #888888;
+}
+@media screen and (min-width: 0px) and (max-width: 420px) {
+  .snippets__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 720px) {
+  .snippets__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  .snippets__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .snippets__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 9999px) {
+  .snippets__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+.snippets__item:first-child .test {
+  border-top: 0 none;
+}
+.snippets__creator {
+  margin-top: 0;
+}
+.snippets-codepen, .snippets--cssdeck {
+  display: none;
+}
+
+body {
+  background: #ececec;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header {
+  border-bottom: 1px solid #ccc;
+}
+@media screen and (min-width: 0px) and (max-width: 420px) {
+  .header {
+    margin-bottom: 0.99rem;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 720px) {
+  .header {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  .header {
+    margin-bottom: 1.995rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .header {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 9999px) {
+  .header {
+    margin-bottom: 3.75rem;
+  }
+}
+.header__inner {
+  position: relative;
+}
+@media screen and (min-width: 0px) and (max-width: 420px) {
+  .header__inner {
+    padding-top: 0.99248rem;
+    padding-bottom: 0.99248rem;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 720px) {
+  .header__inner {
+    padding-top: 1.50376rem;
+    padding-bottom: 1.50376rem;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  .header__inner {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.main-content {
+  min-height: 450px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 420px) {
+  .footer__inner {
+    padding-bottom: 0.33rem;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 720px) {
+  .footer__inner {
+    padding-bottom: 0.5rem;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  .footer__inner {
+    padding-bottom: 0.665rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .footer__inner {
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 9999px) {
+  .footer__inner {
+    padding-bottom: 1.25rem;
+  }
+}

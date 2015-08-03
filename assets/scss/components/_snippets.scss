@@ -1,0 +1,57 @@
+.snippets-list {
+	// display: table;
+}
+.snippets {
+
+
+	&:first-child {
+		@include padding($directions: right);
+	}
+
+	ul {
+		@extend %reset-list;
+	}
+
+
+	&__item {
+
+		@include padding($directions: top bottom, $absolute: true);
+		display: block;
+
+		vertical-align: middle;
+		border-top: 1px solid #888888;
+
+		&:nth-child(even) {
+		}
+
+		&:first-child .test {
+			border-top: 0 none;
+		}
+
+	}
+	&__title {
+
+	}
+
+	&__creator {
+		margin-top: 0;
+	}
+
+	&__creatorlink {
+		@extend %reset-link;
+
+	}
+
+	&__codelink {
+		@extend %reset-link;
+
+	}
+
+	&__languages {
+	}
+
+	&-codepen, &--cssdeck {
+		display: none;
+	}
+}
+

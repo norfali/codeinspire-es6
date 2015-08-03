@@ -1,0 +1,65 @@
+
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+
+@import "mixins.scss";
+@import "config.scss";
+@import "components/typography.scss";
+@import "components/snippets.scss";
+
+body {
+	background: #ececec;
+
+	margin: 0;
+
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+
+.header {
+
+	border-bottom: 1px solid #ccc;
+
+	@include margin($modifier: 3, $directions: bottom);
+
+	&__inner {
+		@extend %standard-container;
+
+		//@include padding($directions: top);
+
+		position: relative;
+
+		@include padding(	$modifier: 2, 
+											$directions: top bottom, 
+											$breakpoint: "tablet", 
+											$application: "down"	); 
+
+	}
+	&__title {
+
+
+	}
+
+
+}
+
+.content {
+
+
+}
+.main-content {
+	@extend %standard-container;
+
+	min-height: 450px;
+}
+
+
+.footer {
+	&__inner {
+		@extend %standard-container;
+
+		@include padding($directions: bottom);
+	}
+}
+

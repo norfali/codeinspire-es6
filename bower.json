@@ -1,0 +1,24 @@
+{
+  "name": "codeinspire",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "Nadhim Orfali <info@fenka.co.uk>"
+  ],
+  "description": "CodeInspire - latest code snippets",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "bourbon": "~4.2.3",
+    "neat": "~1.7.2",
+    "almond": "~0.3.1"
+  }
+}

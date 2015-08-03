@@ -1,0 +1,37 @@
+//- Include mixins
+include ../mixins/_all
+
+doctype
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+html(lang="en")
+	<!--<![endif]-->
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title=""
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+
+		| <!--[if lt IE 9]>
+		| <script src="/assets/js/html5shiv.min.js"></script>
+		| <![endif]-->
+
+		block css
+			link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato')
+			link(rel='stylesheet', href='/assets/css/style.css')
+
+	body
+		include ../includes/header.jade
+		block content
+		include ../includes/footer.jade
+
+		block js
+			script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+
+			if debug
+				script(data-main='main', src='/assets/js/bundle.js')
+				script(src="//localhost:35729/livereload.js")
+			else
+				script(data-main='main', src='/assets/js/bundle.min.js')

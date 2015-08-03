@@ -1,0 +1,82 @@
+/*  --------------------------------------------------- 
+    Breakpoints
+------------------------------------------------------- */
+@include add-breakpoint("mobile", 0px 420px);
+@include add-breakpoint("mobile-large", 420px 720px);
+@include add-breakpoint("tablet", 720px 1024px);
+@include add-breakpoint("desktop", 1024px 1440px);
+@include add-breakpoint("desktop-large", 1440px 9999px);
+
+
+//
+// Layout
+// ------------------------------------------------------------/
+
+// Serves as a basis for calculation of margin and padding.
+$baseline: 1rem;
+
+@include add-modifier("mobile", 0.66);
+@include add-modifier("mobile-large", 1);
+@include add-modifier("tablet", 1.33);
+@include add-modifier("desktop", 2);
+@include add-modifier("desktop-large", 2.5);
+
+// Padding for collapsed elements which would otherwise
+// touch the screen edges when collapsed.
+$collapse-padding: 20px;
+
+
+//
+// Grid variables
+// ------------------------------------------------------------/
+// Column width
+$column: golden-ratio(1em, 3); 
+
+// Gutter between each two columns
+$gutter: golden-ratio(1em, 1); 
+
+// Total number of columns in the grid
+$grid-columns: 12; 
+
+// Standard/common container sizes
+$max-width-small: 580px;
+$max-width: 940px;
+$max-width-large: 1420px;
+
+// Forces all elements to have a border-box layout
+$border-box-sizing: true; 
+
+// Default @media feature for the breakpoint() mixin
+$default-feature: min-width; 
+$default-layout-direction: LTR !default;
+
+//
+// Colours
+// ------------------------------------------------------------/
+$green: #008091;
+$dark-green: #006977;
+$really-dark-green: #00535e;
+
+%standard-container {
+	@include container();
+
+	padding-left: $collapse-padding;
+	padding-right: $collapse-padding;
+}
+
+
+%reset-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+%reset-link {
+	text-decoration: none;
+
+	color: #00aeef;
+
+	font-family: Georgia,"Times New Roman",Times,sans-serif;
+
+	font-style: italic;
+}
