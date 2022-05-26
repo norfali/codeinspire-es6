@@ -1,5 +1,7 @@
 # Playground - CodeInspire
 
+## NOTE: No longer maintained. Project is now archived.
+
 A playground built with ES6 containing a simple feed-type page with CodePen and CSSDeck for latest front-end inspiration.
 
 ### Tech used
